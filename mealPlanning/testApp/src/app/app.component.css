@@ -1,0 +1,29 @@
+.mainWrapper {
+    background-image: url(https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    margin-top: 20px;
+}
+h1 {
+    text-align: center;
+    color: #4F8ABE;
+    font-family: 'Righteous', cursive;
+    font-size: 65px;
+}
+
+#mainContent {
+    min-height: 300px;
+    border: solid 2px gray;
+    padding: 10px;
+    background-color: white;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+#nav {
+    margin: auto;
+}
+a {
+    color: #4F8ABE;
+}
+
