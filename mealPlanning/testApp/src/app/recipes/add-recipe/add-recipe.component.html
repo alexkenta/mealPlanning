@@ -1,0 +1,57 @@
+  <h1>Add a recipe!</h1>
+  <hr>
+  <form name="addRecipeForm" #addRecipeForm="ngForm" (submit)="addNewRecipe()">
+    <label for="name">Recipe Name: </label>
+    <input type="text" name="name"
+    required
+    minlength="3"
+    [(ngModel)] = "newRecipe.name"
+    #name = "ngModel"
+    >
+    <div class="error" *ngIf="name.touched && name.invalid">
+      Recipe name must be atleast 3 characters
+    </div>
+    <br>
+    <label for="difficulty">Difficulty: </label>
+    <select name="difficulty" 
+    required
+    [(ngModel)] = "newRecipe.difficulty"
+    #difficulty = "ngModel"
+    >
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>   
+    </select>
+    <div class="error" *ngIf="difficulty.touched && difficulty.invalid">
+      Please select a difficulty
+    </div>
+    <br>
+    <label for="ingredients">Ingredients: </label>
+    <input type="text" name="ingredients"
+    required
+    minlength="2"
+    [(ngModel)] = "newRecipe.ingredients"
+    #ingredients = "ngModel"
+    >
+    <div class="error" *ngIf="ingredients.touched && ingredients.invalid">
+      Please list some ingredients
+    </div>
+    <br>
+    <br>
+    <label for="method" style="vertical-align: top;">Method: </label>
+    <textarea name="method" cols="70" rows="4"
+    required
+    minlength="10"
+    [(ngModel)] = "newRecipe.method"
+    #method = "ngModel"
+    ></textarea>
+    <div class="error" *ngIf="method.touched && method.invalid">
+      Please write a method/instructions for your recipe
+    </div>
+    <br>
+    <input [disabled]="!addRecipeForm.valid" *ngIf="currentUser" type="submit" value="Add recipe!" class="btn-primary">
+  </form>
+  <p class="error" *ngIf="!currentUser">login to submit a recipe</p>
+

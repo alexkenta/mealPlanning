@@ -49,20 +49,32 @@ module.exports = {
         console.log("should be opt",req.params.id, "should be poll id",req.params.pollId)
         // thisResponse = req.params.pollId[0]
         // upVoteNow = thisResponse.score += 1;
-        response = req.params.pollId
-        Poll.find({_id: req.params.id},function(err, poll){
+        responseObject = req.params.pollId
+        Poll.findOne({_id: req.params.id},function(err, upvotedPoll){
             if(err){
                 console.log(err)
                 res.json(err);
-            } else {
-                console.log("give me poll",poll)
-                upVote = poll.response
+            } 
                 
-                console.log("upvote", upVote)
+            console.log("give me poll",upvotedPoll[responseObject])
+            upvotedPoll[responseObject].reponse += 1
+            console.log(upvotedPoll)
+            
+            upvotedPoll.save(function(err, updatedPoll){
+                if(err){
+                    console.log(err)
+                    res.json(true)
+                } else {
+                    console.log("success", upvotedPoll)
+                    console.log("success")
+                    res.json(true)
+                }
+            })
+            // console.log(upVote)
+            
+            
                 
-                res.json(poll)
-                
-            }
+            
         })
     }
     

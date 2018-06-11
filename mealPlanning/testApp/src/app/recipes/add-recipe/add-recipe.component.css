@@ -1,0 +1,10 @@
+label {
+    width: 200px;
+}
+
+.error {
+    font-size: 90%;
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+}

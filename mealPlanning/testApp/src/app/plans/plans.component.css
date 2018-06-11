@@ -1,0 +1,14 @@
+th {
+    /* width: 150px; */
+    text-align: center;
+}
+td {
+    text-align: center;
+}
+li {
+    list-style-type: none;
+    text-align: left;
+}
+.removeButton {
+    font-size: 50%; margin-left: 5px;
+}
