@@ -1,0 +1,32 @@
+<table class="table" *ngIf="thisPoll">
+  <thead>
+    <th>{{thisPoll.question}}</th>
+    <th>score</th>
+    <th>upvote?</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{thisPoll.optOne.response}}</td>
+      <td>{{thisPoll.optOne.score}}</td>
+      <td><button (click)="vote('optOne')">vote</button></td>
+    </tr>
+    <tr>
+      <td>{{thisPoll.optTwo.response}}</td>
+      <td>{{thisPoll.optTwo.score}}</td>
+      <td><button (click)="vote('optTwo')">vote</button></td>
+    </tr>
+    <tr>
+      <td>{{thisPoll.optThree.response}}</td>
+      <td>{{thisPoll.optThree.score}}</td>
+      <td><button (click)="vote('optThree')">vote</button></td>
+    </tr>
+    <tr>
+      <td>{{thisPoll.optFour.response}}</td>
+      <td>{{thisPoll.optFour.score}}</td>
+      <td><button (click)="vote('optFour')">vote</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>{{thisPoll | json}}</h1>
+

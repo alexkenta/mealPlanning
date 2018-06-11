@@ -1,0 +1,48 @@
+<h1>Create a poll!</h1>
+<form name="newPollForm" #newPollForm="ngForm" (submit)="createPoll()">
+  <label for="question">What's the question?</label>
+  <input type="text" name="question"
+  required
+  minlength="10"
+  [(ngModel)]="newPoll.question"
+  #question="ngModel"
+  >
+  
+
+  <label for="optOne">1st Option</label>
+  <input type="text" name="optOne"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.optOne"
+  #optOne="ngModel"
+  >
+
+  <label for="optTwo">2nd Option</label>
+  <input type="text" name="optTwo"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.optTwo"
+  #optTwo="ngModel"
+  >
+
+  <label for="optThree">3rd Option</label>
+  <input type="text" name="optThree"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.optThree"
+  #optThree="ngModel"
+  >
+
+  <label for="optFour">4th Option</label>
+  <input type="text" name="optFour"
+  required
+  minlength="3"
+  [(ngModel)]="newPoll.optFour"
+  #optFour="ngModel"
+  >
+
+  <input type="submit" value="Submit poll" >
+
+</form>
+
+

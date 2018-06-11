@@ -1,0 +1,13 @@
+<h3>Login/Register</h3>
+<form #logRegForm="ngForm" name="logRegForm" (submit)="logReg()">
+  <label for="name">Name: </label>
+  <input type="text" name="name"
+  required
+  minlength="3"
+  [(ngModel)] = "user.name"
+  #name = "ngModel"
+  >
+  <br>
+  <input type="submit" value="Enter">
+</form>
+{{user | json}}
